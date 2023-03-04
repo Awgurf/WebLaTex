@@ -1,0 +1,90 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage[fleqn]{amsmath}
+\usepackage[right=20mm, left=20mm, top=20mm, bottom=10mm, footskip=10mm, includefoot, heightrounded]{geometry}
+\usepackage{titlesec}
+\setlength{\parskip}{1ex}
+\setlength{\jot}{3mm}
+%\titleformat*{\section}{\large\bfseries}
+%\titlespacing*{\section}{0pt}{2\parskip}{\parskip}
+\spaceskip=\fontdimen2\font plus 4\fontdimen3\font minus 2\fontdimen4\font
+
+\begin{document}
+
+\section*{Kinematyka}
+
+\subsection*{Ruch po okręgu}
+\begin{gather*}
+   \vec{r} = R \left( \cos(\varphi)\vec{i} + \sin(\varphi)\vec{j} \right) \\
+   \vec{v} = \frac{\mathrm{d}\vec{r}}{\mathrm{d}t} = R\omega \left( -\sin(\varphi)\vec{i}+\cos(\varphi)\vec{j} \right) = R\omega \left( \cos\left( \varphi+\frac{\pi}{2} \right)\vec{i}+\sin\left( \varphi+\frac{\pi}{2} \right)\vec{j} \right)\\
+   \vec{a} = \frac{\mathrm{d}\vec{v}}{\mathrm{d}t} = -R\omega^2 \left( \cos(\varphi)\vec{i} + \sin(\varphi)\vec{j} \right)
+\end{gather*}
+
+\subsection*{Ruch obrotowy}
+\begin{gather*}
+   \vec{v} = \vec{\omega}\times\vec{r}\ ; \quad v = \frac{\mathrm{d}s}{\mathrm{d}t} = \frac{r\mathrm{d}\varphi}{\mathrm{d}t} = r\omega\\
+   \vec{a} = \frac{\mathrm{d}\vec{v}}{\mathrm{d}t} = \frac{\mathrm{d}}{\mathrm{d}t} \left( \vec{\omega} \times \vec{r} \right) = \frac{\mathrm{d}\vec{\omega}}{\mathrm{d}t} \times \vec{r} + \vec{\omega} \times \frac{\mathrm{d}\vec{r}}{\mathrm{d}t} = \vec{\varepsilon} \times \vec{r}+\vec{\omega}\times\left( \vec{\omega}\times \vec{r} \right)
+\end{gather*}
+\qquad (suma składnika stycznego i normalnego)
+
+\subsection*{Ruch płaski}
+\begin{gather*}
+   \vec{BB'} = \vec{AA'} + \vec{\Delta \varphi}\times\vec{AB}\\
+   \vec{v_B} = \vec{v_A}+\vec{\omega}\times\vec{AB}\\
+   \vec{a} = \vec{a_A} + \vec{\varepsilon} \times \vec{AB}+\vec{\omega}\times\left( \vec{\omega}\times \vec{AB} \right)
+\end{gather*}
+
+\section*{Dynamika}
+\subsection*{II ZDN}
+Ruch postępowy
+\[\vec{F}=\frac{\vec{\mathrm{d}p}}{\mathrm{d}t}=\vec{a}m\]
+Ruch obrotowy
+\[\vec{M}=\frac{\vec{\mathrm{d}K}}{\mathrm{d}t}=\vec{\varepsilon}I\]
+
+\subsection*{Praca i moc}
+Ruch postępowy
+\[\mathrm{d}W=\vec{F}\circ \vec{\mathrm{d}s} \quad \Rightarrow \quad W=\int \vec{F}\circ \vec{\mathrm{d}s} \]
+\[P = \frac{\mathrm{d}W}{\mathrm{d}t} = \vec{F}\circ \vec{v}\]
+Ruch obrotowy
+\[\mathrm{d}W=\vec{M}\circ \vec{\mathrm{d}\varphi} \quad \Rightarrow \quad W=\int \vec{M}\circ \vec{\mathrm{d}\varphi} \]
+\[P = \frac{\mathrm{d}W}{\mathrm{d}t} = \vec{M}\circ \vec{\omega}\]
+Praca w polu siły potencjalnej o potencjale \(V(\vec{r})\), gdzie \(\vec{F}=-\mathrm{grad}V=-\left[ \frac{\partial V}{\partial x},\frac{\partial V}{\partial y},\frac{\partial V}{\partial z} \right] \)
+\[W = \int_{A}^{B} \vec{F}\circ \vec{\mathrm{d}r}  = -\int_{A}^{B}  \left[ \frac{\partial V}{\partial x},\frac{\partial V}{\partial y},\frac{\partial V}{\partial z} \right] \circ \left[ \mathrm{d}x,\mathrm{d}y,\mathrm{d}z \right]  = -\int_{A}^{B} \mathrm{d}V = V(A)-V(B) \]
+
+\subsection*{Środek masy}
+\[\vec{r_C}=\frac{\int \vec{r}\,\mathrm{d}m}{m}\]
+
+\subsection*{Momenty statyczne}
+Względem płaszczyzny YZ
+\[S_x = \int x\, \mathrm{d}m\]
+wtedy
+\[x_C = \frac{S_x}{m}\]
+
+\subsection*{Momenty bezwładności}
+Względem osi X
+\[I_x=\int\left(y^2+z^2\right)\mathrm{d}m\]
+Względem płaszczyzny ZY
+\[I_{xx}=\int x^2 \,\mathrm{d}m\]
+Względem punktu O
+\[I_O=\int\left(x^2+y^2+z^2\right)\mathrm{d}m\]
+Twierdzenie Steinera
+\[I=I_C+md^2\]
+Moment dewiacyjny względem płaszczyzny XY
+\[I_{xy}=\int xy \,\mathrm{d}m\]
+
+\subsection*{Pęd i moment pędu (kręt)}
+Dla bryły sztywnej w ruchu postępowym
+\[\vec{p}=\int \vec{v} \,\mathrm{d}m\]
+\[\vec{K}=\int \vec{r} \times \vec{\mathrm{d}p} = \int \vec{r} \times \vec{v}\,\mathrm{d}m \]
+W ruchu obrotowym
+\[\vec{K}=I\vec{\omega}\]
+\subsection*{Energia kinetyczna bryły sztywnej}
+W dowolnym ruchu
+\[E_k=\frac{1}{2} \int v^2 \,\mathrm{d}m\]
+W ruchu postępowym
+\[E_k=\frac{mv^2}{2}\]
+W ruchu obrotowym
+\[E_k=\frac{J\omega^2}{2}\]
+
+\end{document}
